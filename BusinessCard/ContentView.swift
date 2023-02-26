@@ -23,7 +23,8 @@ struct ContentView: View {
                 Text("Job Title")
                     .foregroundColor(.white)
                     .font(.system(size: 25))
-
+                Divider()
+                InfoView()
             }
         }
     }
@@ -32,5 +33,19 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct InfoView: View {
+    var body: some View {
+        RoundedRectangle(cornerRadius: 25)
+            .fill(Color.white )
+            .frame(height: 50)
+            .foregroundColor(.white)
+            .overlay(HStack {
+                Image(systemName: "phone.fill").foregroundColor(Color(red: 0.10, green: 0.74, blue: 0.61))
+                Text("Phone Number")
+            })
+            .padding(.all)
     }
 }
